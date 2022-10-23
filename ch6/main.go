@@ -20,8 +20,9 @@ type ShibaInu struct {
 
 func (s *ShibaInu) Bark() string { return "One" }
 
-func DogVoice(d *Animal) string {
-	return "hoge"
+func DogVoice(d Animal) string {
+	fmt.Println("----- DogVoice -----")
+	return d.Bark()
 }
 
 type Person struct {
@@ -47,7 +48,7 @@ func main() {
 	si = &ShibaInu{}
 	fmt.Println(si.Bark())
 
-	fmt.Println(DogVoice(&si))
+	fmt.Println(DogVoice(si))
 
 	person := Person{
 		"Taka", 45,
